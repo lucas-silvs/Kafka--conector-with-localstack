@@ -9,3 +9,18 @@ aws_secret_access_key = <acess_secret_key>
 ```
 
 Essas credenciais são obtidas com comandos listados no arquivo 'comandos a ser executado.sh', onde é necessário criar um usuario IAM na aws e criar uma secret-key para esse usuario.
+
+A estrutura de pastas devem ficar conforme o exemplo abaixo:
+
+```
+.
+├── aws_credentials
+├── comandos  a ser executado.sh
+├── connectors
+├── create-sink.json
+├── docker-compose.yaml
+├── LICENSE
+├── list-connectors.json
+└── README.md
+
+```
