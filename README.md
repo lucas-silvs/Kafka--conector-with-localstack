@@ -24,3 +24,13 @@ A estrutura de pastas devem ficar conforme o exemplo abaixo:
 └── README.md
 
 ```
+
+Tambem será necessário instalar o a biblioteca Python fastAvro para realizar a leitura do arquivo avro e validar se os campos estão corretos:
+
+```
+pip install fastavro
+```
+Ao baixar o arquivo abro, para validar se o avro está correto e printa-lo via terminal, utilize o comando abaixo:
+```
+fastavro nome_do_arquivo_avro.avro
+```
