@@ -49,8 +49,5 @@ ksql>CREATE SOURCE CONNECTOR s WITH (
 #Necessário instalar o jq para poder executar o curl do arquivo "list-connectors.json"
 ╰─ sudo apt-get install -y jq
 
-
-
-
-
-
+#Comando para listar os logs do container "kafka-connect"
+╰─ docker-compose logs -f kafka-connect 
