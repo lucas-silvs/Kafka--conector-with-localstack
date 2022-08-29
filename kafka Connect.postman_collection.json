@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "d1982e6f-dca8-46c0-bcc9-3ac1e2e97f90",
+		"name": "kafka Connect Create S3 Connector",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17572927"
+	},
+	"item": [
+		{
+			"name": "criar S3 Sink Connector - REST API",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"connector.class\": \"io.confluent.connect.s3.S3SinkConnector\",\n    \"key.converter\": \"org.apache.kafka.connect.storage.StringConverter\",\n    \"tasks.max\": \"1\",\n    \"topics\": \"cats\",\n    \"s3.region\": \"us-east-1\",\n    \"s3.bucket.name\": \"rmoff-voluble-tests\",\n    \"flush.size\": \"2\",\n    \"storage.class\": \"io.confluent.connect.s3.storage.S3Storage\",\n    \"format.class\": \"io.confluent.connect.s3.format.avro.AvroFormat\",\n    \"schema.generator.class\": \"io.confluent.connect.storage.hive.schema.DefaultSchemaGenerator\",\n    \"schema.compatibility\": \"NONE\",\n    \"partitioner.class\": \"io.confluent.connect.storage.partitioner.DefaultPartitioner\",\n    \"transforms\": \"AddMetadata\",\n    \"transforms.AddMetadata.type\": \"org.apache.kafka.connect.transforms.InsertField$Value\",\n    \"transforms.AddMetadata.offset.field\": \"_offset\",\n    \"transforms.AddMetadata.partition.field\": \"_partition\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8083/connectors/sink-s3-voluble/config",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors",
+						"sink-s3-voluble",
+						"config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar connectors - REST API",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
