@@ -30,7 +30,7 @@ Tambem será necessário instalar o a biblioteca Python fastAvro para realizar a
 ```
 pip install fastavro
 ```
-Ao baixar o arquivo abro, para validar se o avro está correto e printa-lo via terminal, utilize o comando abaixo:
+Ao baixar o arquivo avro, para validar se o avro está correto e printa-lo via terminal, utilize o comando abaixo:
 ```
 fastavro nome_do_arquivo_avro.avro
 ```
